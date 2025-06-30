@@ -5,6 +5,13 @@
 #define MAX_TASKS 100
 #define FILENAME "tasks.txt"
 
+#define RESET   "\x1b[0m"
+#define YELLOW  "\x1b[33m"
+#define GREEN   "\x1b[32m"
+#define CYAN    "\x1b[36m"
+#define RED     "\x1b[31m"
+#define MAGENTA "\x1b[35m"
+
 int main() {
     Task tasks[MAX_TASKS];      // Array to hold tasks
     int taskCount = 0;          // Number of tasks currently in memory
@@ -14,13 +21,14 @@ int main() {
 
     // Main menu loop
     do {
-        printf("\n--- Task Manager ---\n");
-        printf("1. Add Task\n");
-        printf("2. List Tasks\n");
-        printf("3. Delete Task\n");
-        printf("4. Sort Tasks by Priority\n");
-        printf("5. Save and Exit\n");
+        printf("\n%s--- Task Manager ---\n%s", YELLOW, RESET);
+        printf("%s1.%s Add Task\n", CYAN, RESET);
+        printf("%s2.%s List Tasks\n", CYAN, RESET);
+        printf("%s3.%s Delete Task\n", CYAN, RESET);
+        printf("%s4.%s Sort Tasks by Priority\n", CYAN, RESET);
+        printf("%s5.%s Save and Exit\n", CYAN, RESET);
         printf("Choose an option: ");
+
         scanf("%d", &choice);
         getchar(); // Clear newline after number input
 

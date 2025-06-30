@@ -24,11 +24,13 @@ void addTask(Task *tasks, int *taskCount) {
 
 // List tasks in the array
 void listTasks(Task *tasks, int taskCount) {
-    printf("\n--- Task List ---\n");
+    printf("\n%s--- Task List ---%s\n", YELLOW, RESET);
     for (int i = 0; i < taskCount; i++) {
-        printf("%d. %s | Due: %s | Priority: %d\n",
-               i + 1, tasks[i].name, tasks[i].due_date, tasks[i].priority);
+        printf("%s%d.%s %s | Due: %s | Priority: %d\n",
+            MAGENTA, i + 1, RESET,
+            tasks[i].name, tasks[i].due_date, tasks[i].priority);
     }
+
     if (taskCount == 0)
         printf("No tasks yet.\n");
 }
