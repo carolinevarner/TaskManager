@@ -28,7 +28,7 @@ void addTask(Task *tasks, int *taskCount) {
         tasks[*taskCount].due_date[strcspn(tasks[*taskCount].due_date, "\n")] = 0;
 
         if (!isValidDate(tasks[*taskCount].due_date)) {
-            printf("❌ Invalid date format. Try again.\n");
+            printf("Invalid date format. Try again.\n");
         }
     } while (!isValidDate(tasks[*taskCount].due_date));
 
